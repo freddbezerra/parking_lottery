@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require bootstrap-sprockets
+//= require odometer
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .

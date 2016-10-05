@@ -33,7 +33,7 @@ class PlayersController < ApplicationController
          #Enviando email
         # PlayerMailer.lottery_mail(@player).deliver_later
         
-        flash[:success] = "Participação confirmada , confira sua caixa de e-mail"
+        flash.now[:success] = "Participação confirmada , confira sua caixa de e-mail"
         format.html { render "welcome/index" }
         format.json { render :show, status: :created, location: @player }
       else
