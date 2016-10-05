@@ -1,0 +1,28 @@
+<%= bootstrap_form_for(@lottery) do |f| %>
+   <% if @lottery.errors.any? %>
+    <div id="error_explanation">
+     <div class="alert alert-danger">
+           <p class="text-center"><b>Encontramos alguns erros durante o cadatro:</b></p>
+          <ul>
+              <% @lottery.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+          </ul>
+      </div>
+    </div>
+  <% end %>
+  <div class="row">
+      <div class="col-md-5">
+            <%= f.date_field :initial_date ,label: 'Abertura das inscrições'%>
+      </div>
+      <div class="col-md-5">
+            <%= f.date_field :final_date,label: "Encerramento de inscrições"  %>
+      </div>
+      <div class="col-md-2">
+            <%= f.number_field :vacancies ,label:"Vagas" %>
+      </div>
+  </div>
+  <div class="actions">
+    <%= f.submit "Criar Sorteio", class: "btn btn-primary btn-block" %>
+  </div>
+<% end %>

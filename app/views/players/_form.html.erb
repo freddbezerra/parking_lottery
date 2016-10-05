@@ -1,0 +1,27 @@
+<%= bootstrap_form_for(@player) do |f| %>
+  <% if @player.errors.any? %>
+    <div id="error_explanation">
+     <div class="alert alert-danger">
+           <p class="text-center"><b>Encontramos alguns erros durante o cadatro:</b></p>
+          <ul>
+              <% @player.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+          </ul>
+      </div>
+    </div>
+  <% end %>
+  <div class="row">
+      <div class="col-md-7">
+           <%= f.text_field :email , append: "@belezanatural.com.br", label:"E-mail"  %>
+       </div>
+       <div class="col-md-5">
+           <%= f.collection_select(:lottery_id,Lottery.where(closed: false),:id,:name_in_collection, {prompt: "Selecione o Sorteio",label: "Sorteio" })%>
+       </div>
+  </div>
+  <br/>
+  
+  <div class="actions">
+    <%= f.submit "Participar" , class: "btn btn-block btn-primary"%>
+  </div>
+<% end %>

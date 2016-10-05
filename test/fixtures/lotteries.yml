@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  initial_date: 2016-08-23
+  final_date: 2016-08-23
+  vacancies: 1
+  closed: 
+
+two:
+  initial_date: 2016-08-23
+  final_date: 2016-08-23
+  vacancies: 1
+  closed: 

@@ -1,0 +1,36 @@
+<div>
+    <h1 class="text-center"> Sorteio </h1>
+    <h3 class="text-center">Selecione o sorteio para ser realizado</h3>
+    <br>
+    <div class="row">
+    <% @lotteries.each do |lottery|%>
+    
+    <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+                <h3 class="panel-title text-center">Sorteio <%= lottery.id %>  <b><%=lottery.final_date %></b></h3>
+          </div>
+          <div class="panel-body">
+              <div class="row">
+                    <div class="col-md-8">
+                        <%=icon("car")%> Vagas <%= lottery.vacancies %><br>
+                        <%=icon("users")%> Inscritos <%= lottery.players.count%> 
+                        
+                        
+                        
+                    </div>
+                    <div class="col-md-4">
+                        <% if !lottery.closed? %>
+                            <%= link_to "Sortear" , lotteries_lucky_path(lottery.id) ,class:"btn  btn-success btn-block " %>
+                        <% else %>
+                           <p class="badge success">Encerrado<p>
+                        <% end %>
+                    </div> 
+              </div>
+          </div>
+        </div>
+    </div>
+        
+    <%end%>
+    </div>
+</div>

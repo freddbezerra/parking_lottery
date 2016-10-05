@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  lucky_number: 1
+  winner: false
+
+two:
+  email: MyString
+  lucky_number: 1
+  winner: false

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center">Sorteados</h1>
+<br>
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>E-mail</th>
+      <th>Numero da Sorte</th>
+      <th>Sorteio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @players.each do |player| %>
+      <tr>
+        <td><%= player.email %></td>
+        <td><%= player.lucky_number %></td>
+        <td><%= link_to "Numero: #{player.lottery_id}" , lottery_path(id: player.lottery_id),class: "btn btn-default" %></td>
+        <% if player.winner %>
+          <td><%= icon('trophy', 'Ganhador', id: 'winner-icon', class: 'strong') %></td>
+        <% else %>
+          <td></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

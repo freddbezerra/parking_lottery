@@ -1,0 +1,16 @@
+<div class="container">
+    
+    <h1 class="text-center"> Sorteio realizado! </h1>
+    <h3 class="text-center">Confira abaixo os numeros sorteados</h3>
+    
+    <div class="row">
+        <%@winners.each do |winner| %>
+             <div class="col-md-4 col-xs-4">
+                
+                     <h1 class="text-center"><%=winner.lucky_number%></h1>
+                     <h4 class="text-center"><%=winner.email%></h4>
+            
+             </div>
+        <%end%>
+    </div>
+</div>
