@@ -5,6 +5,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass', '~> 4.6.2'
 gem 'bootstrap_form'
 gem 'devise'
+gem 'rails-i18n', '~> 4.0.0'
 
 gem 'rails_12factor', group: :production
 gem 'pg' , group: :production
